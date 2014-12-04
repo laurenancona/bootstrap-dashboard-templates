@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Starter Template for Bootstrap 3.3.1</title>
+    <link rel="shortcut icon" href="">
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/superhero/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!--    <title>Layouts &raquo; Split-Columns</title>-->
+<!--
+    <link rel="stylesheet" href="../../assets/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/keen-dashboards.css">
+-->
+    <style>
+        body {
+            padding-top: 50px;
+        }
+/*
+        .starter-template {
+            width: 90%;
+            padding: 40px 15px;
+            text-align: center;
+        }
+*/
+        #chart-1-container {
+            float: left;
+            width: 48%;
+            padding: 0 5px 0 15px;
+            margin: 5px;
+        }
+        #chart-2-container {
+            float: left;
+            position: relative;
+            width: 48%;
+            padding: 0 15px 0 5px;
+            margin: 5px;
+        }
+        #view-selector-container {
+            line-height: 1.3em;
+        }
+    </style>
+
+    <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!--  Ubiquitous Trendy Navbar Jawn  -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Analytics Dashboard Jawn</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a>
+                    </li>
+                    <li><a href="#about">Departments</a>
+                    </li>
+                    <li><a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!--.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Name of Dashboard Jawn</h1>
+        <br>
+        <div class="starter-template">
+            <!--                <p class="lead">Now you can start your own project with <a target="_blank" href="http://getbootstrap.com/">Bootstrap 3.3.1</a>. This plugin is a fork from <a href="https://github.com/le717/brackets-html-skeleton#readme">HTML Skeleton</a>.</p>-->
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
+
+        <!--
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="navbar-brand" href="./">Layouts &raquo; Split Columns</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="https://keen.io">Home</a></li>
+          <li><a href="https://keen.io/team">Team</a></li>
+          <li><a href="https://github.com/keenlabs/dashboards/tree/gh-pages/layouts/split-columns">Source</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/keen-io-devs">Community</a></li><li><a href="http://stackoverflow.com/questions/tagged/keen-io?sort=newest&pageSize=15">Technical Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+-->
+    
+<!--Begin Google Embed API nonsense    -->
+<h1>Dashboard Demo</h1>
+
+   <script>
+        (function(w,d,s,g,js,fs){
+          g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
+          js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+          js.src='https://apis.google.com/js/platform.js';
+          fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
+        }(window,document,'script'));
+  </script>
+  
+<div id="embed-api-auth-container" width="100%"></div>
+<div id="view-selector-container" width="100%"></div>
+<div id="chart-1-container" width="50%"></div>
+<div id="chart-2-container" width="50%"></div>
+
+  <!-- Include the ViewSelector2 component script. -->
+  <script src="/public/javascript/embed-api/view-selector2.js"></script>
+
+  <!-- Include the DateRangeSelector component script. -->
+  <script src="/public/javascript/embed-api/date-range-selector.js"></script>
+<script>
+
+gapi.analytics.ready(function() {
+
+  /**
+   * Authorize the user immediately if the user has already granted access.
+   * If no access has been created, render an authorize button inside the
+   * element with the ID "embed-api-auth-container".
+   */
+  gapi.analytics.auth.authorize({
+    container: 'embed-api-auth-container',
+    clientid: '1045492784533-ql9o89eua66i30ir48m9dr54gsu4psgn.apps.googleusercontent.com',
+  });
+
+
+  /**
+   * Create a new ViewSelector instance to be rendered inside of an
+   * element with the id "view-selector-container".
+   */
+  var viewSelector = new gapi.analytics.ViewSelector({
+    container: 'view-selector-container'
+  });
+
+  // Render the view selector to the page.
+  viewSelector.execute();
+
+
+  /**
+   * Create a new DataChart instance for pageviews over the past 7 days.
+   * It will be rendered inside an element with the id "chart-1-container".
+   */
+  var dataChart1 = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      metrics: 'ga:pageviews',
+      dimensions: 'ga:date',
+      'start-date': '7daysAgo',
+      'end-date': 'yesterday'
+    },
+    chart: {
+      container: 'chart-1-container',
+      type: 'LINE',
+      options: {
+        width: '50%'
+      }
+    }
+  });
+
+
+  /**
+   * Create a new DataChart instance for pageviews over the 7 days prior
+   * to the past 7 days.
+   * It will be rendered inside an element with the id "chart-2-container".
+   */
+  var dataChart2 = new gapi.analytics.googleCharts.DataChart({
+    query: {
+      metrics: 'ga:pageviews',
+      dimensions: 'ga:date',
+      'start-date': '15daysAgo',
+      'end-date': '8daysAgo'
+    },
+    chart: {
+      container: 'chart-2-container',
+      type: 'LINE',
+      options: {
+        width: '50%'
+      }
+    }
+  });
+
+
+  /**
+   * Render both dataCharts on the page whenever a new view is selected.
+   */
+  viewSelector.on('change', function(ids) {
+    dataChart1.set({query: {ids: ids}}).execute();
+    dataChart2.set({query: {ids: ids}}).execute();
+  });
+
+});
+</script>
+
+
+
+
+  <script src="../.. / assets / lib / jquery / dist / jquery.min.js ">
+        </script>
+        <script src="../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="../../assets/lib/holderjs/holder.js"></script>
+        <script>
+            Holder.add_theme("white", {
+                background: "#fff",
+                foreground: "#a7a7a7",
+                size: 10
+            });
+        </script>
+
+        <script src="../../assets/lib/keen-js/dist/keen.min.js"></script>
+        <script src="../../assets/js/meta.js"></script>
+
+
+</body>
+
+</html>

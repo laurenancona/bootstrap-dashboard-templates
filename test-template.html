@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Test Template</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/superhero/bootstrap.min.css" >
+    <style>body{padding-top:30px;}.starter-template{padding:40px 15px;text-align:center;}</style>
+    <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        input,
+        select {
+            border: 1px solid #d4d2d0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font: inherit;
+            font-weight: 400;
+            height: 2.4285714285714284em;
+            line-height: 1.4285714285714286em;
+            padding: .42857142857142855em
+        }
+        input:focus,
+        select:focus {
+            border-color: #4d90fe;
+            outline: 0
+        }
+        .ViewSelector,
+        .ViewSelector2 {
+            display: block
+        }
+        .ViewSelector table,
+        .ViewSelector2-item {
+            display: block;
+            margin-bottom: 1em;
+            width: 30%
+        }
+        .ViewSelector td:first-child,
+        .ViewSelector2-item>label {
+            font-weight: 700;
+            margin: 0 .25em .25em 0;
+            display: block
+        }
+        .ViewSelector2-item>select {
+            width: 100%
+        }
+        .ViewSelector table,
+        .ViewSelector tbody,
+        .ViewSelector td,
+        .ViewSelector tr {
+            display: block
+        }
+        .ViewSelector table {
+            height: auto!important;
+            width: auto!important
+        }
+        .ViewSelector td {
+            width: auto!important
+        }
+        .ViewSelector td:last-child * {
+            display: block;
+            text-align: left
+        }
+        .ViewSelector td:last-child>div {
+            font-weight: 400;
+            margin: 0
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Dashr</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div><!--.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="starter-template">
+            <h1>Test Dashboard</h1>
+                <p class="lead">There's no business like snow business.</p>
+                    <section id="auth-button" style="padding:5px 0 10px;float:right;"></section>
+                    <div id="guts" style="width: 100%; float:left; background-color:#888888; padding:0 10px 0 10px;">
+                        <h3>I am the guts of this operation.</h3>
+                        
+                        <!-- Step 1: Containing Elements -->
+                        
+                        <section id="view-selector" style="width:100%; padding-bottom:20px;background-color:#888888;"></section>
+                        <section id="timeline" style="background-color:white;padding:10px;margin:20px;width:45%;float:left;"></section>
+                        <section id="pie" style="background-color:white;padding:10px;margin:20px;width:45%;float:right;"></section>
+
+                        <!-- Step 2: Load the library. -->
+
+                        <script>
+                            (function(w,d,s,g,js,fjs){
+                              g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
+                              js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
+                              js.src='https://apis.google.com/js/platform.js';
+                              fjs.parentNode.insertBefore(js,fjs);js.onload=function(){g.load('analytics')};
+                            }(window,document,'script'));
+                        </script>
+                        
+                        
+
+                        <script>
+                        gapi.analytics.ready(function() {
+
+                          // Step 3: Authorize the user.
+
+                          var CLIENT_ID = '1045492784533-ql9o89eua66i30ir48m9dr54gsu4psgn.apps.googleusercontent.com';
+
+                          gapi.analytics.auth.authorize({
+                            container: 'auth-button',
+                            clientid: CLIENT_ID,
+                          });
+
+                            
+                          // Step 4: Create the view selector.
+
+                          var viewSelector = new gapi.analytics.ViewSelector({
+                            container: 'view-selector'
+                          });
+
+                          
+                          // Step 5: Create the timeline chart.
+
+                          var timeline = new gapi.analytics.googleCharts.DataChart({
+                            reportType: 'ga',
+                            query: {
+                              'dimensions': 'ga:date',
+                              'metrics': 'ga:sessions, ga:newUsers',
+                              'start-date': '30daysAgo',
+                              'end-date': 'yesterday',
+                            },
+                            chart: {
+                              type: 'LINE',
+                              container: 'timeline'
+                            }
+                          });
+                            
+
+                          // Step 6: Hook up the components to work together.
+
+                          gapi.analytics.auth.on('success', function(response) {
+                            viewSelector.execute();
+                          });
+
+                          viewSelector.on('change', function(ids) {
+                            var newIds = {
+                              query: {
+                                ids: ids
+                              }
+                            }
+                            timeline.set(newIds).execute();
+                          });
+                        });
+                        </script>
+
+                        
+                    </div>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
